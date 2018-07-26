@@ -14,6 +14,7 @@ class Toggle extends React.Component {
     return {
       on: this.state.on,
       toggle: this.toggle,
+
       // In our last usage example, you'll notice that we had some
       // common props (`onClick`, and we're also missing `aria-expanded`
       // value on the `button`). Because most users will want these
@@ -23,6 +24,10 @@ class Toggle extends React.Component {
       // 🐨 Add a `togglerProps` object that has an `aria-expanded` (should
       // be set to the value of the `on` state), and an `onClick` assigned
       // to the toggle function.
+      togglerProps: {
+        'aria-expanded': this.state.on,
+        onClick: this.toggle,
+      },
     }
   }
   render() {
